@@ -69,7 +69,7 @@ const DannyCard = () => (
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          objectPosition: 'center top',
+          objectPosition: 'center 20%',
           display: 'block',
         }}
       />
@@ -100,7 +100,7 @@ const InitialsCard = ({ name, role }) => {
       overflow: 'hidden',
       background: pal.bg,
       border: '1px solid rgba(255,255,255,0.06)',
-      aspectRatio: '2/3',
+      aspectRatio: '3/4',
       display: 'flex',
       flexDirection: 'column',
       transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
@@ -124,7 +124,7 @@ const InitialsCard = ({ name, role }) => {
 
 // Team grid — Danny card is slightly wider via col span trick
 const TeamGrid = () => (
-  <div style={{ display: 'grid', gridTemplateColumns: '1.35fr 1fr 1fr 1fr', gap: '1.5rem', alignItems: 'start' }} className="team-grid">
+  <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: '1.25rem', alignItems: 'start' }} className="team-grid">
     <DannyCard />
     <InitialsCard name="Dylan Rivera" role="Founding Partner" />
     <InitialsCard name="Jackelyn Martinez" role="Founding Partner" />
