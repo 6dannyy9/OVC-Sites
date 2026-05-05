@@ -90,9 +90,9 @@ const DannyCard = () => (
 const InitialsCard = ({ name, role }) => {
   const initials = name.split(' ').map(n => n[0]).join('');
   const palettes = {
-    'DR': { bg: 'linear-gradient(145deg, #0A1628 0%, #0F2A4A 100%)', dot: 'rgba(46,109,164,0.4)' },
-    'JM': { bg: 'linear-gradient(145deg, #160A0A 0%, #2E1010 100%)', dot: 'rgba(139,58,58,0.4)' },
-    'JC': { bg: 'linear-gradient(145deg, #0A160A 0%, #102E10 100%)', dot: 'rgba(58,139,58,0.4)' }
+    DR: { bg: 'linear-gradient(145deg, #0A1628 0%, #0F2A4A 100%)', dot: 'rgba(46,109,164,0.4)' },
+    JM: { bg: 'linear-gradient(145deg, #160A0A 0%, #2E1010 100%)', dot: 'rgba(139,58,58,0.4)' },
+    JC: { bg: 'linear-gradient(145deg, #0A160A 0%, #102E10 100%)', dot: 'rgba(58,139,58,0.4)' }
   };
   const pal = palettes[initials] || { bg: 'linear-gradient(145deg, #111, #222)', dot: 'rgba(255,107,42,0.2)' };
   return (
