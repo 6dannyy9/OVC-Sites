@@ -53,7 +53,7 @@ const DannyCard = () => (
     overflow: 'hidden',
     background: '#0D0D0D',
     border: '1px solid rgba(255,107,42,0.3)',
-    aspectRatio: '3/4',
+    aspectRatio: '3/5', // More vertical, tighter crop
     boxShadow: '0 0 40px rgba(255,107,42,0.08)',
     transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
     cursor: 'pointer',
