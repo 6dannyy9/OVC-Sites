@@ -69,7 +69,7 @@ const DannyCard = () => (
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          objectPosition: 'center 75%',
+          objectPosition: 'center 15%',
           display: 'block',
         }}
       />
