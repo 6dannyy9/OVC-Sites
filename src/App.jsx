@@ -45,7 +45,8 @@ const Logo = ({ height = 40 }) => (
 );
 
 // ── Team Cards ───────────────────────────────────────────────────────────────
-// Danny: real photo in a clean portrait card (taller aspect ratio so photo isn't squished)
+// ── Team Cards ──────────────────────────────────────────────────────────────
+// Danny: real photo in a clean portrait card
 const DannyCard = () => (
   <div style={{
     position: 'relative',
@@ -53,33 +54,34 @@ const DannyCard = () => (
     overflow: 'hidden',
     background: '#0D0D0D',
     border: '1px solid rgba(255,107,42,0.3)',
-    aspectRatio: '3/5', // More vertical, tighter crop
+    aspectRatio: '1/1.3',
     boxShadow: '0 0 40px rgba(255,107,42,0.08)',
     transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
-    cursor: 'pointer',
-  }} className="danny-card">
-    {/* Orange top accent */}
-    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #FF6B2A, #FFB347)', zIndex: 3 }} />
-    {/* Photo — padded inside card, border visible on all sides */}
-    <div style={{ position: 'absolute', top: '1rem', left: '1rem', right: '1rem', bottom: '3.5rem', borderRadius: '10px', overflow: 'hidden' }}>
-      <img
-        src={IMG_DANNY}
-        alt="Danny Tinoco"
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center 15%',
-          display: 'block',
-        }}
-      />
-    </div>
-    {/* Gradient for text */}
-    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.98) 100%)', zIndex: 1 }} />
-    {/* Info */}
-    <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem', right: '1.5rem', zIndex: 2 }}>
-      <h4 style={{ ...arch(800), fontSize: '1.2rem', marginBottom: '0.3rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>Danny Tinoco</h4>
-      <span style={{ ...mono, color: '#FF6B2A', fontSize: '0.75rem' }}>Founder</span>
+    cursor: 'pointer'
+  }}>
+    <img 
+      src={IMG_DANNY}
+      alt="Danny Tinoco"
+      style={{
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center 28%'
+      }}
+    />
+    <div style={{
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+      padding: '1.5rem',
+      zIndex: 2
+    }}>
+      <h4 style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 800, fontSize: '1.125rem', marginBottom: '0.25rem', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#FAFAFA' }}>Danny Tinoco</h4>
+      <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#FF6B2A' }}>Founder</span>
     </div>
   </div>
 );
@@ -88,9 +90,9 @@ const DannyCard = () => (
 const InitialsCard = ({ name, role }) => {
   const initials = name.split(' ').map(n => n[0]).join('');
   const palettes = {
-    DR: { bg: 'linear-gradient(145deg, #0A1628 0%, #0F2A4A 100%)', dot: 'rgba(46,109,164,0.4)' },
-    JM: { bg: 'linear-gradient(145deg, #160A0A 0%, #2E1010 100%)', dot: 'rgba(139,58,58,0.4)' },
-    JC: { bg: 'linear-gradient(145deg, #0A160A 0%, #102E10 100%)', dot: 'rgba(58,139,58,0.4)' },
+    'DR': { bg: 'linear-gradient(145deg, #0A1628 0%, #0F2A4A 100%)', dot: 'rgba(46,109,164,0.4)' },
+    'JM': { bg: 'linear-gradient(145deg, #160A0A 0%, #2E1010 100%)', dot: 'rgba(139,58,58,0.4)' },
+    'JC': { bg: 'linear-gradient(145deg, #0A160A 0%, #102E10 100%)', dot: 'rgba(58,139,58,0.4)' }
   };
   const pal = palettes[initials] || { bg: 'linear-gradient(145deg, #111, #222)', dot: 'rgba(255,107,42,0.2)' };
   return (
@@ -104,23 +106,30 @@ const InitialsCard = ({ name, role }) => {
       display: 'flex',
       flexDirection: 'column',
       transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
-      cursor: 'pointer',
+      cursor: 'pointer'
     }} className="team-card">
-      {/* Decorative blob */}
       <div style={{ position: 'absolute', width: '160px', height: '160px', borderRadius: '50%', background: pal.dot, top: '-20px', right: '-20px', filter: 'blur(50px)', pointerEvents: 'none' }} />
-      {/* Big initials in center */}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ ...arch(900), fontSize: '5.5rem', letterSpacing: '-0.06em', color: 'rgba(255,255,255,0.08)', lineHeight: 1, userSelect: 'none' }}>{initials}</span>
+        <span style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 900, fontSize: '5.5rem', letterSpacing: '-0.06em', color: 'rgba(255,255,255,0.08)', lineHeight: 1, userSelect: 'none' }}>{initials}</span>
       </div>
-      {/* Bottom gradient + info */}
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.92) 100%)', zIndex: 1 }} />
       <div style={{ position: 'relative', zIndex: 2, padding: '0 1.5rem 1.5rem' }}>
-        <h4 style={{ ...arch(800), fontSize: '1.1rem', marginBottom: '0.3rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>{name}</h4>
-        <span style={{ ...mono, color: 'rgba(250,250,250,0.55)', fontSize: '0.75rem' }}>{role}</span>
+        <h4 style={{ fontFamily: 'Archivo, sans-serif', fontWeight: 800, fontSize: '1.1rem', marginBottom: '0.3rem', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#FAFAFA' }}>{name}</h4>
+        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: 'rgba(250,250,250,0.55)' }}>{role}</span>
       </div>
     </div>
   );
 };
+
+// Team grid — Danny card is slightly wider via col span trick
+const TeamGrid = () => (
+  <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: '1.25rem', alignItems: 'start' }} className="team-grid">
+    <DannyCard />
+    <InitialsCard name="Dylan Rivera" role="Founding Partner" />
+    <InitialsCard name="Jackelyn Martinez" role="Founding Partner" />
+    <InitialsCard name="Jesus Cruz" role="Founding Partner" />
+  </div>
+);
 
 // Team grid — Danny card is slightly wider via col span trick
 const TeamGrid = () => (
