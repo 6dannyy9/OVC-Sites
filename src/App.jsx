@@ -131,16 +131,6 @@ const TeamGrid = () => (
   </div>
 );
 
-// Team grid — Danny card is slightly wider via col span trick
-const TeamGrid = () => (
-  <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr 1fr', gap: '1.25rem', alignItems: 'start' }} className="team-grid">
-    <DannyCard />
-    <InitialsCard name="Dylan Rivera" role="Founding Partner" />
-    <InitialsCard name="Jackelyn Martinez" role="Founding Partner" />
-    <InitialsCard name="Jesus Cruz" role="Founding Partner" />
-  </div>
-);
-
 // ── Reusable sections ────────────────────────────────────────────────────────
 const ServicesList = ({ showAll }) => (
   <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
